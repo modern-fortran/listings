@@ -25,10 +25,11 @@ before_install:
       brew update;
       brew install gcc;
       brew install open-mpi;
+      export FC=gfortran;
     fi
 
 install: 
-    - make -k || true
+    - make array_copy_mpi
     
 script:
     - mpirun -n 2 ./array_copy_mpi
