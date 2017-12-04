@@ -4,7 +4,7 @@ implicit none
 integer, dimension(5), codimension[*] :: array
 
 if (num_images() /= 2) then
-  stop 'Error: This program must be run on 2 parallel processes'
+  error stop 'Error: This program must be run on 2 parallel processes'
 end if
 
 if (this_image() == 1) then
