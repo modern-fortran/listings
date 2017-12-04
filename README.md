@@ -36,11 +36,7 @@ brew install gcc open-mpi
 mpirun -n 2 ./array_copy_mpi
 ```
 
-
-
-
-
 ## Problems?
 
-See the list of already open [issues](https://github.com/fortran-in-action/listings/issues/new).
+See the list of already open [issues](https://github.com/fortran-in-action/listings/issues).
 If you can't find your issue, open a [new issue](https://github.com/fortran-in-action/listings/issues/new).
