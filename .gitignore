@@ -1,3 +1,6 @@
+array_copy_mpi
+array_copy_caf
+
 # Prerequisites
 *.d
 

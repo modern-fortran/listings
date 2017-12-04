@@ -1,0 +1,37 @@
+language: c
+fast_finish: true
+
+os:
+  - linux
+  - osx
+  
+env: FC=gfortran-6
+
+dist: trusty
+group: edge
+
+notifications:
+  email: false
+
+git:
+  depth: 3
+
+addons:
+  apt:
+    sources: ['ubuntu-toolchain-r-test']
+    packages: ['gfortran-6']
+
+before_install:
+  - if [[ $TRAVIS_OS_NAME == osx ]]; then
+      brew update;
+      brew install gcc;
+      export FC=gfortran;
+      brew install open-mpi;
+    fi
+
+install: 
+    - make -k
+    
+script:
+    - mpirun -n ./array_copy_mpi
+

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scivision/listings.svg?branch=master)](https://travis-ci.org/scivision/listings)
+
 # listings
 
 Code listings for the upcoming Fortran in Action book by Manning Publications.
