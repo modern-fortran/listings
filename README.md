@@ -10,7 +10,7 @@ make -k
 ```
 
 -k
-: continue to `make` even if one command fails (for those that don't have `caf` compiler, for example).
+: continue to `make` even if one command fails (for those that don't have `caf` compiler wrapper, for example).
 
 ## Run
 
