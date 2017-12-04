@@ -2,11 +2,20 @@
 
 Code listings for the upcoming Fortran in Action book by Manning Publications.
 
-## Getting started
+## Build
 
-```
+```sh
 git clone https://github.com/fortran-in-action/listings
-make
+make -k
+```
+
+-k
+: continue to `make` even if one command fails (for those that don't have `caf` compiler, for example).
+
+## Run
+
+```sh
+mpirun -n 2 ./array_copy_mpi
 ```
 
 ## Problems?
