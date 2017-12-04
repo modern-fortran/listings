@@ -31,5 +31,5 @@ install:
     - make -k || true
     
 script:
-    - mpirun -n ./array_copy_mpi
+    - mpirun -n 2 ./array_copy_mpi
 
