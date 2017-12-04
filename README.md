@@ -17,7 +17,7 @@ make -k
 ### Linux
 Get the `mpif90` compiler wrapper on Ubuntu &ge; 12.04:
 ```sh
-apt install libopenmpi-dev gfortran
+apt install libopenmpi-dev openmpi-bin gfortran 
 ```
 
 Get the `caf` compiler wrapper on Ubuntu &ge; 17.04:

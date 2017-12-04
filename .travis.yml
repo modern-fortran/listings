@@ -18,7 +18,7 @@ git:
 
 addons:
   apt:
-    packages: ['gfortran','libopenmpi-dev']
+    packages: ['gfortran','libopenmpi-dev','openmpi-bin']
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == osx ]]; then
