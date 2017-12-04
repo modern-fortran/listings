@@ -1,0 +1,35 @@
+language: c
+fast_finish: true
+
+os:
+  - linux
+  - osx
+  
+env: FC=gfortran
+
+dist: trusty
+group: edge
+
+notifications:
+  email: false
+
+git:
+  depth: 3
+
+addons:
+  apt:
+    packages: ['gfortran','libopenmpi-dev','openmpi-bin']
+
+before_install:
+  - if [[ $TRAVIS_OS_NAME == osx ]]; then
+      brew update;
+      brew install gcc;
+      brew install open-mpi;
+    fi
+
+install: 
+    - make -k || true
+    
+script:
+    - mpirun -n 2 ./array_copy_mpi
+

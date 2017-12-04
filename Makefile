@@ -13,4 +13,4 @@ array_copy_mpi: src/ch01/array_copy_mpi.f90
 	mpif90 $< -o $@
 
 clean:
-	rm -v array_copy_{caf,mpi}
+	$(RM) -v array_copy_{caf,mpi}

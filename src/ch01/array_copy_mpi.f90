@@ -14,7 +14,7 @@ call mpi_comm_size(mpi_comm_world, procsize, ierr)
 
 if (procsize /= 2) then
   call mpi_finalize(ierr)
-  stop 'Error: This program must be run on 2 parallel processes'
+  error stop 'Error: This program must be run on 2 parallel processes'
 end if
 
 if (nproc == 0) then
@@ -42,4 +42,4 @@ write(*,'(a,i2,a,5(4x,i2))')'array on proc ', nproc,&
 
 call mpi_finalize(ierr)
 
-endprogram array_copy_mpi
+end program array_copy_mpi
