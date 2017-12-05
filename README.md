@@ -40,3 +40,10 @@ mpirun -n 2 ./array_copy_mpi
 
 See the list of already open [issues](https://github.com/fortran-in-action/listings/issues).
 If you can't find your issue, open a [new issue](https://github.com/fortran-in-action/listings/issues/new).
+
+## Acknowledgements
+
+Big thank you to contributors:
+
+* [Izaak Beekman](https://github.com/zbeekman)
+* [Michael Hirsch](https://github.com/scivision)
