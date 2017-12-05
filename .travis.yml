@@ -1,10 +1,10 @@
-language: c
+language: none
 fast_finish: true
 
 os:
   - linux
   - osx
-  
+
 env: FC=gfortran
 
 dist: trusty
@@ -18,18 +18,20 @@ git:
 
 addons:
   apt:
-    packages: ['gfortran','libopenmpi-dev','openmpi-bin']
+    sources: ['ubuntu-toolchain-r-test', 'george-edison55-precise-backports']
+    packages: ['gfortran','libopenmpi-dev','openmpi-bin', 'cmake']
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == osx ]]; then
       brew update;
-      brew install gcc;
+      brew install gcc || brew upgrade gcc || brew link --overwrite gcc;
       brew install open-mpi;
+      brew install opencoarrays;
     fi
 
-install: 
+install:
     - make -k || true
-    
+
 script:
     - mpirun -n 2 ./array_copy_mpi
 
