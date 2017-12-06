@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/scivision/listings.svg?branch=master)](https://travis-ci.org/scivision/listings)
+[![Build Status](https://travis-ci.org/fortran-in-action/listings.svg?branch=master)](https://travis-ci.org/fortran-in-action/listings)
 
 # listings
 
