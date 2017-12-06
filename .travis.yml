@@ -34,4 +34,5 @@ install:
 
 script:
     - mpirun -n 2 ./array_copy_mpi
-
+    - cafrun -n 2 ./array_copy_caf
+    - cafrun -n 4 ./hello_coarrays
