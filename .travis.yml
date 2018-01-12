@@ -18,8 +18,8 @@ git:
 
 addons:
   apt:
-    sources: ['ubuntu-toolchain-r-test', 'george-edison55-precise-backports']
-    packages: ['gfortran','libopenmpi-dev','openmpi-bin', 'cmake']
+    sources: ['ubuntu-toolchain-r-test']
+    packages: ['gfortran','libopenmpi-dev','openmpi-bin']
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == osx ]]; then
@@ -34,5 +34,8 @@ install:
 
 script:
     - mpirun -n 2 ./array_copy_mpi
-    - cafrun -n 2 ./array_copy_caf
-    - cafrun -n 4 ./hello_coarrays
+# FIXME: Ubuntu 14.04 is too old for opencoarrays.  Would Linuxbrew work?
+    - if [[ $TRAVIS_OS_NAME == osx ]]; then
+        cafrun -n 2 ./array_copy_caf;
+        cafrun -n 2 ./hello_coarrays;
+      fi

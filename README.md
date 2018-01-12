@@ -49,6 +49,11 @@ make -k
 -k
 : continue to `make` even if one command fails (for those that don't have `caf` compiler wrapper, for example).
 
+or, you can select to make particular programs by:
+```sh
+make array_copy_mpi
+```
+
 ### Linux
 Get the `mpif90` compiler wrapper on Ubuntu &ge; 12.04:
 ```sh
