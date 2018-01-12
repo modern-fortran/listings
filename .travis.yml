@@ -1,10 +1,10 @@
-language: c
+language: none
 fast_finish: true
 
 os:
   - linux
   - osx
-  
+
 env: FC=gfortran
 
 dist: trusty
@@ -18,19 +18,24 @@ git:
 
 addons:
   apt:
+    sources: ['ubuntu-toolchain-r-test']
     packages: ['gfortran','libopenmpi-dev','openmpi-bin']
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == osx ]]; then
       brew update;
-      brew install gcc;
+      brew install gcc || brew upgrade gcc || brew link --overwrite gcc;
       brew install open-mpi;
-      export FC=gfortran;
+      brew install opencoarrays;
     fi
 
-install: 
-    - make array_copy_mpi
-    
+install:
+    - make -k || true
+
 script:
     - mpirun -n 2 ./array_copy_mpi
-
+# FIXME: Ubuntu 14.04 is too old for opencoarrays.  Would Linuxbrew work?
+    - if [[ $TRAVIS_OS_NAME == osx ]]; then
+        cafrun -n 2 ./array_copy_caf
+        cafrun -n 2 ./hello_coarrays
+      fi
