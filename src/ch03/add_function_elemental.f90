@@ -6,6 +6,8 @@ write(*,*) add(3, 5)
 write(*,*) add([1, 2], 3)
 write(*,*) add(1, [2, 3, 4])
 write(*,*) add([1, 2, 3], [2, 3, 4])
+
+! uncomment the line below to trigger compiler error
 !write(*,*) add([1, 2], [2, 3, 4])
 
 contains
