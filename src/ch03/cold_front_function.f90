@@ -1,35 +1,35 @@
 program cold_front
 
-! This program calculates temperature due to cold front
-! passage for different times using an external function.
+  ! This program calculates temperature due to cold front
+  ! passage for different times using an external function.
 
-implicit none
+  implicit none
 
-integer :: n
-real :: nhours
+  integer :: n
+  real :: nhours
 
-do n = 6, 48, 6
+  do n = 6, 48, 6
 
-  nhours = real(n)
+    nhours = real(n)
 
-  write(*,*) 'Temparature after ', nhours, ' hours is ',& 
-    cold_front_temperature(12., 24., 20., 960., nhours),&
-    ' degrees.'
+    write(*,*) 'Temparature after ', nhours, ' hours is ',& 
+      cold_front_temperature(12., 24., 20., 960., nhours),&
+      ' degrees.'
 
-enddo
+  enddo
 
-contains
+  contains
 
-real function cold_front_temperature(temp1, temp2, c, dx, dt) result(r)
+  real function cold_front_temperature(temp1, temp2, c, dx, dt) result(r)
 
-  ! Returns the temperature after dt hours, given initial 
-  ! temperatures at origin (temp1) and destination (temp2),
-  ! front speed (c), and distance between the two locations (dx).
+    ! Returns the temperature after dt hours, given initial 
+    ! temperatures at origin (temp1) and destination (temp2),
+    ! front speed (c), and distance between the two locations (dx).
 
-  real, intent(in) :: temp1, temp2, c, dx, dt
+    real, intent(in) :: temp1, temp2, c, dx, dt
 
-  r = temp2 - c * (temp2 - temp1) / dx * dt
+    r = temp2 - c * (temp2 - temp1) / dx * dt
 
-end function cold_front_temperature
+  end function cold_front_temperature
 
 end program cold_front
