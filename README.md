@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/fortran-in-action/listings.svg?branch=master)](https://travis-ci.org/fortran-in-action/listings)
 [![GitHub issues](https://img.shields.io/github/issues/fortran-in-action/listings.svg)](https://github.com/fortran-in-action/listings/issues)
 
-Code listings for the upcoming Fortran in Action book by Manning Publications.
+Code listings for the upcoming book Modern Fortran: Building Efficient Parallel Applications by Manning Publications.
 
 ## Try it in the cloud
 
