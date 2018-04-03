@@ -8,7 +8,7 @@ MPI = mpif90
 
 .SUFFIXES: .f90 .o
 
-all: array_copy_caf array_copy_mpi hello hello_coarrays hello_images hello_images_syncall data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel
+all: array_copy_caf array_copy_mpi coarrays hello hello_coarrays hello_images hello_images_syncall data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean
 
 hello_coarrays: src/ch01/hello_coarrays.f90
 	$(CAF) $< -o $@
@@ -46,5 +46,11 @@ run_xpowx: src/ch04/run_xpowx.f90
 run_xpowx_parallel: src/ch04/run_xpowx_parallel.f90
 	$(CAF) $< -o $@
 
+run_xpowx_parallel_mean: src/ch04/run_xpowx_parallel_mean.f90
+	$(CAF) $< -o $@
+
+coarrays: src/ch04/coarrays.f90
+	$(CAF) $< -o $@
+
 clean:
-	$(RM) -v array_copy_{caf,mpi} hello_{coarrays,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel
+	$(RM) -v array_copy_{caf,mpi} coarrays hello_{coarrays,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean

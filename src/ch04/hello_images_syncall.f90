@@ -1,4 +1,6 @@
 program hello_images_syncall
+  implicit none
+  integer :: n
   do n = 1, num_images()
     if (this_image() == n) then
       write(*,*) 'Hello from image',&
