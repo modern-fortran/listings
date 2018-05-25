@@ -1,7 +1,7 @@
 # listings
 
-[![Build Status](https://travis-ci.org/fortran-in-action/listings.svg?branch=master)](https://travis-ci.org/modern-fortran/listings)
-[![GitHub issues](https://img.shields.io/github/issues/fortran-in-action/listings.svg)](https://github.com/modern-fortran/listings/issues)
+[![Build Status](https://travis-ci.org/modern-fortran/listings.svg?branch=master)](https://travis-ci.org/modern-fortran/listings)
+[![GitHub issues](https://img.shields.io/github/issues/modern-fortran/listings.svg)](https://github.com/modern-fortran/listings/issues)
 
 Code listings for [Modern Fortran: Building Efficient Parallel Applications](https://www.manning.com/books/modern-fortran?a_aid=modernfortran&a_bid=2dc4d442).
 
