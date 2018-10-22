@@ -2,7 +2,7 @@ module mod_person
   type :: Person
     character(len=10) :: name
   contains  
-    procedure, public, pass(self) :: greet
+    procedure, pass(self) :: greet
   end type Person
 contains
   subroutine greet(self)
