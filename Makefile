@@ -8,7 +8,7 @@ MPI = mpif90
 
 .SUFFIXES: .f90 .o
 
-all: array_copy_caf array_copy_mpi coarrays derived_type_init derived_type_constructor hello hello_coarrays hello_images hello_images_syncall hello_derived_types hello_derived_types_elemental data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean
+all: array_copy_caf array_copy_mpi banking_app_example coarrays derived_type_init derived_type_constructor hello hello_coarrays hello_images hello_images_syncall hello_derived_types hello_derived_types_elemental data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean
 
 hello_coarrays: src/ch01/hello_coarrays.f90
 	$(CAF) $< -o $@
@@ -64,5 +64,8 @@ hello_derived_types: src/ch06/hello_derived_types.f90
 hello_derived_types_elemental: src/ch06/hello_derived_types_elemental.f90
 	$(FC) $< -o $@
 
+banking_app_example: src/ch06/banking_app_example.f90
+	$(FC) $< -o $@
+
 clean:
-	$(RM) -v *.mod array_copy_{caf,mpi} coarrays derived_type_{constructor,init} hello_{coarrays,derived_types,derived_types_elemental,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean
+	$(RM) -v *.mod array_copy_{caf,mpi} banking_app_example coarrays derived_type_{constructor,init} hello_{coarrays,derived_types,derived_types_elemental,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean
