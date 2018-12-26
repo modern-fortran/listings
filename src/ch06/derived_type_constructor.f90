@@ -18,7 +18,7 @@ contains
   pure type(Person) function person_constructor(name, age, occupation) result(res)
     character(len=*), intent(in) :: name
     integer, intent(in) :: age
-    character(len=*), intent(in), optional :: occupation
+    character(len=*), intent(in) :: occupation
     res % name = name
     res % age = age
     res % occupation = occupation
