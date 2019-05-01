@@ -10,7 +10,7 @@ Code listings for [Modern Fortran: Building Efficient Parallel Applications](htt
 To build and run the examples on your local machine, get the code using git:
 
 ```sh
-git clone https://github.com/fortran-in-action/listings
+git clone https://github.com/modern-fortran/listings
 cd listings
 make -k
 ```
@@ -47,8 +47,8 @@ mpirun -n 2 ./array_copy_mpi
 
 ## Problems?
 
-See the list of already open [issues](https://github.com/fortran-in-action/listings/issues).
-If you can't find your issue, open a [new issue](https://github.com/fortran-in-action/listings/issues/new).
+See the list of already open [issues](https://github.com/modern-fortran/listings/issues).
+If you can't find your issue, open a [new issue](https://github.com/modern-fortran/listings/issues/new).
 
 ## Acknowledgements
 
