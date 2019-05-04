@@ -1,4 +1,4 @@
-# Fortran in Action
+# Modern Fortran
 #
 # listings build rules
 
@@ -8,7 +8,7 @@ MPI = mpif90
 
 .SUFFIXES: .f90 .o
 
-all: array_copy_caf array_copy_mpi banking_app_example coarrays derived_type_init derived_type_constructor hello hello_coarrays hello_images hello_images_syncall hello_derived_types hello_derived_types_elemental data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn
+all: array_copy_caf array_copy_mpi banking_app_example coarrays derived_type_init derived_type_constructor hello hello_coarrays hello_images hello_images_syncall hello_derived_types hello_derived_types_elemental data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn redirect_stdout_to_file
 
 hello_coarrays: src/ch01/hello_coarrays.f90
 	$(CAF) $< -o $@
@@ -73,5 +73,8 @@ strcat: src/ch07/strcat.f90
 qn: src/ch09/qn.f90
 	$(FC) $< -o $@
 
+redirect_stdout_to_file: src/ch09/redirect_stdout_to_file.f90
+	$(FC) $< -o $@
+
 clean:
-	$(RM) -v *.mod array_copy_{caf,mpi} banking_app_example coarrays derived_type_{constructor,init} hello_{coarrays,derived_types,derived_types_elemental,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn
+	$(RM) -v *.mod array_copy_{caf,mpi} banking_app_example coarrays derived_type_{constructor,init} hello_{coarrays,derived_types,derived_types_elemental,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn redirect_stdout_to_file
