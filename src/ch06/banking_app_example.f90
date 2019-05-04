@@ -9,7 +9,7 @@ module mod_banking
   type :: Transaction
     character(:), allocatable :: name
     integer :: id, status
-    type(datetime) :: time_created, time_processes
+    type(datetime) :: time_created, time_processed
     real :: amount
   end type Transaction
 
