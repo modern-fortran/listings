@@ -1,8 +1,9 @@
 program qn
   use iso_fortran_env, only: stdin => input_unit, &
-                             stdout => output_unit
+                             stdout => output_unit, &
+                             stderr => error_unit
   implicit none
-  integer :: fileunit
+  integer :: fileunit, stat
   character(len=9999) :: filename, text
   character(len=6) :: pos
   logical :: file_exists
@@ -37,9 +38,15 @@ program qn
        action='write', position=pos)
 
   do
-    read(stdin, '(a)') text
-    write(fileunit, '(a)') trim(text)
-    flush(fileunit)
+    read(stdin, '(a)', iostat=stat, err=100) text
+    write(fileunit, '(a)', iostat=stat, err=100) trim(text)
+    flush(fileunit, iostat=stat, err=100)
   end do
+
+  100 close(fileunit)
+  if (stat > 0) then
+    write(stderr, '(a, i3)') 'Error encoutered, code = ', stat
+    stop
+  end if
 
 end program qn
