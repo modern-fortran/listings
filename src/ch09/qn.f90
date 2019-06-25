@@ -28,8 +28,6 @@ program qn
         exit
       elseif (any(trim(text) == ['Q', 'q'])) then
         stop
-      else
-        continue
       end if
     end do
   end if
