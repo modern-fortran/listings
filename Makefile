@@ -34,46 +34,46 @@ cold_front_function: src/ch03/cold_front_function.f90
 sum_function_elemental: src/ch03/sum_function_elemental.f90
 	$(FC) $< -o $@
 
-hello_images: src/ch05/hello_images.f90
+qn: src/ch05/qn.f90
+	$(FC) $< -o $@
+
+redirect_stdout_to_file: src/ch05/redirect_stdout_to_file.f90
+	$(FC) $< -o $@
+
+coarrays: src/ch06/coarrays.f90
 	$(CAF) $< -o $@
 
-hello_images_syncall: src/ch05/hello_images_syncall.f90
+hello_images: src/ch06/hello_images.f90
 	$(CAF) $< -o $@
 
-run_xpowx: src/ch05/run_xpowx.f90
+hello_images_syncall: src/ch06/hello_images_syncall.f90
 	$(CAF) $< -o $@
 
-run_xpowx_parallel: src/ch05/run_xpowx_parallel.f90
+run_xpowx: src/ch06/run_xpowx.f90
 	$(CAF) $< -o $@
 
-run_xpowx_parallel_mean: src/ch05/run_xpowx_parallel_mean.f90
+run_xpowx_parallel: src/ch06/run_xpowx_parallel.f90
 	$(CAF) $< -o $@
 
-coarrays: src/ch04/coarrays.f90
+run_xpowx_parallel_mean: src/ch06/run_xpowx_parallel_mean.f90
 	$(CAF) $< -o $@
 
-derived_type_constructor: src/ch06/derived_type_constructor.f90
+derived_type_constructor: src/ch07/derived_type_constructor.f90
 	$(FC) $< -o $@
 
-derived_type_init: src/ch06/derived_type_init.f90
+derived_type_init: src/ch07/derived_type_init.f90
 	$(FC) $< -o $@
 
-hello_derived_types: src/ch06/hello_derived_types.f90
+hello_derived_types: src/ch07/hello_derived_types.f90
 	$(FC) $< -o $@
 
-hello_derived_types_elemental: src/ch06/hello_derived_types_elemental.f90
+hello_derived_types_elemental: src/ch07/hello_derived_types_elemental.f90
 	$(FC) $< -o $@
 
-banking_app_example: src/ch06/banking_app_example.f90
+banking_app_example: src/ch07/banking_app_example.f90
 	$(FC) $< -o $@
 
-strcat: src/ch07/strcat.f90
-	$(FC) $< -o $@
-
-qn: src/ch09/qn.f90
-	$(FC) $< -o $@
-
-redirect_stdout_to_file: src/ch09/redirect_stdout_to_file.f90
+strcat: src/ch08/strcat.f90
 	$(FC) $< -o $@
 
 clean:
