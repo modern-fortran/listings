@@ -1,5 +1,6 @@
 program array_copy_caf
-  ! Example of sending an array of integers using coarrays.
+  ! Example of sending/receiving an array of integers using coarrays.
+  ! Listing 1.3 in the book.
   implicit none
 
   integer :: array(5)[*] = 0

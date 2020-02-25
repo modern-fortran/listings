@@ -1,5 +1,6 @@
 program hello_coarrays
-
+  ! A coarray variant of a hello world program.
+  ! Listing 1.1 in the book.
   implicit none
 
   integer :: a[*]

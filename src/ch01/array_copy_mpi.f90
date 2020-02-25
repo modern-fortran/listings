@@ -1,5 +1,6 @@
 program array_copy_mpi
   ! Example of sending/receiving an array of integers using MPI.
+  ! Listing 1.2 in the book.
   use mpi
   implicit none
 
