@@ -1,4 +1,5 @@
 program read_write_list_formatted
+  ! Example of list-directed I/O with formatting.
   implicit none
   character(len=1000) :: text
   character(len=:), allocatable :: fmt_string

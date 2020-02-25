@@ -1,5 +1,6 @@
 program redirect_stdout_to_file
-
+  ! Redirecting standard output to a file.
+  ! Listing 6.27 in the book.
   use iso_fortran_env, only: stdout => output_unit, &
                              stderr => error_unit
   implicit none

@@ -1,5 +1,5 @@
 program write_pi
-
+  ! Writing number pi to a text and a binary file.
   implicit none
   integer :: fileunit, record_length
   real, parameter :: pi = 4 * atan(1.)

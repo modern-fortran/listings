@@ -1,4 +1,6 @@
 program dashboard
+  ! Example of formatting data as text.
+  ! Listing 6.9 in the book.
   use iso_fortran_env, only: dash => output_unit
   implicit none
 
