@@ -1,5 +1,7 @@
 program example_elemental
-
+  ! Example of calling an elemental function 
+  ! with scalars or arrays as arguments.
+  ! Listing 3.20 in the book.
   implicit none
 
   print *, sum(3, 5)

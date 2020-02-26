@@ -1,20 +1,18 @@
 FC = gfortran
 
+PROGRAMS = cold_front_program \
+	   cold_front_function \
+	   cold_front_elemental \
+           hello_function \
+	   example_elemental \
+	   optional_arguments
+
 .PHONY: all clean
 
-all: cold_front_program cold_front_function example_elemental optional_arguments
+all: ${PROGRAMS}
 
-cold_front_program: cold_front_program.f90
-	$(FC) $< -o $@
-
-cold_front_function: cold_front_function.f90
-	$(FC) $< -o $@
-
-example_elemental: example_elemental.f90
-	$(FC) $< -o $@
-
-optional_arguments: optional_arguments.f90
+%: %.f90
 	$(FC) $< -o $@
 
 clean:
-	$(RM) cold_front_program cold_front_function example_elemental optional_arguments
+	$(RM) ${PROGRAMS}

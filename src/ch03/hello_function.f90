@@ -1,8 +1,8 @@
 program hello
+  ! Minimal example of calling a function.
+  implicit none
 
-implicit none
-
-write(*,*) greeting()
+  print *, greeting()
 
 contains
 
