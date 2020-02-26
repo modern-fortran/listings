@@ -33,9 +33,9 @@ install:
     - make -k || true
 
 script:
-    - mpirun -n 2 ./array_copy_mpi
+    - mpirun -n 2 src/ch01/array_copy_mpi
 # FIXME: Ubuntu 14.04 is too old for opencoarrays.  Would Linuxbrew work?
     - if [[ $TRAVIS_OS_NAME == osx ]]; then
-        cafrun -n 2 ./array_copy_caf;
-        cafrun -n 2 ./hello_coarrays;
+        cafrun -n 2 src/ch01/array_copy_caf;
+        cafrun -n 2 src/ch01/hello_coarrays;
       fi
