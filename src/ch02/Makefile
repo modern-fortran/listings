@@ -1,15 +1,13 @@
 FC = gfortran
 
+PROGRAMS = hello data_types
+
 .PHONY: all clean
 
-all: hello data_types
+all: ${PROGRAMS}
 
-hello: hello.f90
-	$(FC) $< -o $@
-
-data_types: data_types.f90
+%: %.f90
 	$(FC) $< -o $@
 
 clean:
-	$(RM) hello data_types
-
+	$(RM) ${PROGRAMS}

@@ -1,80 +1,14 @@
-# Modern Fortran
-#
-# listings build rules
+# Modern Fortran -- Miscellaneous Listings
 
-FC = gfortran
-CAF = caf
-MPI = mpif90
+.PHONY: all clean
 
-.SUFFIXES: .f90 .o
+all: ch01 ch02 ch03 ch06
 
-all: array_copy_caf array_copy_mpi banking_app_example coarrays derived_type_init derived_type_constructor hello hello_coarrays hello_images hello_images_syncall hello_derived_types hello_derived_types_elemental data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn redirect_stdout_to_file
-
-hello_coarrays: src/ch01/hello_coarrays.f90
-	$(CAF) $< -o $@
-
-array_copy_caf: src/ch01/array_copy_caf.f90
-	$(CAF) $< -o $@
-
-array_copy_mpi: src/ch01/array_copy_mpi.f90
-	$(MPI) $< -o $@
-
-hello: src/ch02/hello.f90
-	$(FC) $< -o $@
-
-data_types: src/ch02/data_types.f90
-	$(FC) $< -o $@
-
-cold_front_program: src/ch03/cold_front_program.f90
-	$(FC) $< -o $@
-
-cold_front_function: src/ch03/cold_front_function.f90
-	$(FC) $< -o $@
-
-sum_function_elemental: src/ch03/sum_function_elemental.f90
-	$(FC) $< -o $@
-
-qn: src/ch05/qn.f90
-	$(FC) $< -o $@
-
-redirect_stdout_to_file: src/ch05/redirect_stdout_to_file.f90
-	$(FC) $< -o $@
-
-coarrays: src/ch06/coarrays.f90
-	$(CAF) $< -o $@
-
-hello_images: src/ch06/hello_images.f90
-	$(CAF) $< -o $@
-
-hello_images_syncall: src/ch06/hello_images_syncall.f90
-	$(CAF) $< -o $@
-
-run_xpowx: src/ch06/run_xpowx.f90
-	$(CAF) $< -o $@
-
-run_xpowx_parallel: src/ch06/run_xpowx_parallel.f90
-	$(CAF) $< -o $@
-
-run_xpowx_parallel_mean: src/ch06/run_xpowx_parallel_mean.f90
-	$(CAF) $< -o $@
-
-derived_type_constructor: src/ch07/derived_type_constructor.f90
-	$(FC) $< -o $@
-
-derived_type_init: src/ch07/derived_type_init.f90
-	$(FC) $< -o $@
-
-hello_derived_types: src/ch07/hello_derived_types.f90
-	$(FC) $< -o $@
-
-hello_derived_types_elemental: src/ch07/hello_derived_types_elemental.f90
-	$(FC) $< -o $@
-
-banking_app_example: src/ch07/banking_app_example.f90
-	$(FC) $< -o $@
-
-strcat: src/ch08/strcat.f90
-	$(FC) $< -o $@
+%:
+	$(MAKE) --directory=src/$@
 
 clean:
-	$(RM) -v *.mod array_copy_{caf,mpi} banking_app_example coarrays derived_type_{constructor,init} hello_{coarrays,derived_types,derived_types_elemental,images,images_syncall} hello data_types cold_front_program cold_front_function sum_function_elemental run_xpowx run_xpowx_parallel run_xpowx_parallel_mean strcat qn redirect_stdout_to_file
+	$(MAKE) --directory=src/ch01 clean
+	$(MAKE) --directory=src/ch02 clean
+	$(MAKE) --directory=src/ch03 clean
+	$(MAKE) --directory=src/ch06 clean
