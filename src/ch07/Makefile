@@ -1,6 +1,6 @@
 FC = caf
 
-PROGRAMS = hello_images hello_images_syncall coarrays
+PROGRAMS = hello_images hello_images_ordered coarrays
 
 .PHONY: all clean
 

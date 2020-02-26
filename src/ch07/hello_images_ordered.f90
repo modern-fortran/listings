@@ -1,4 +1,4 @@
-program hello_images_syncall
+program hello_images_ordered
   ! Synchronizing parallel images to print in order.
   implicit none
   integer :: n
@@ -7,4 +7,4 @@ program hello_images_syncall
       print *, 'Hello from image', this_image(), 'of', num_images()
     sync all
   end do
-end program hello_images_syncall
+end program hello_images_ordered
