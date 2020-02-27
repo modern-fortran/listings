@@ -1,3 +1,5 @@
+! A "hello world" variant using derived types.
+! Listing 8.2 in the book.
 module mod_person
   type :: Person
     character(len=10) :: name
